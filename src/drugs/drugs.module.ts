@@ -5,8 +5,10 @@ import { DrugsRepository } from './drugs.repository';
 import { DrugsService } from './drugs.service';
 import { DrugModel } from './models/drug.model';
 
+const isDatabaseConfigured = !!process.env.DB_HOST;
+
 @Module({
-  imports: [SequelizeModule.forFeature([DrugModel])],
+  imports: isDatabaseConfigured ? [SequelizeModule.forFeature([DrugModel])] : [],
   controllers: [DrugsController],
   providers: [DrugsService, DrugsRepository],
 })

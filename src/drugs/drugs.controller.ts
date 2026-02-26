@@ -10,14 +10,14 @@ export class DrugsController {
 
   @Get()
   @ApiOperation({ summary: 'Get all drugs' })
-  getAllDrugs(): Drug[] {
+  getAllDrugs(): Promise<Drug[]> {
     return this.drugsService.getAllDrugs();
   }
 
   @Get(':id')
   @ApiOperation({ summary: 'Get a drug by ID' })
   @ApiParam({ name: 'id', description: 'Drug ID', type: Number })
-  getDrugById(@Param('id') id: string): Drug | undefined {
+  getDrugById(@Param('id') id: string): Promise<Drug | undefined> {
     return this.drugsService.getDrugById(Number(id));
   }
 }

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { DrugModel } from '../drugs/models/drug.model';
+import { DrugModel } from '../modules/drugs/models/drug.model';
 
 const isDatabaseConfigured = !!process.env.DB_HOST;
 

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add src/drugs/drugs.repository.ts src/drugs/drugs.module.ts src/database/database.module.ts)",
+      "Bash(git push)"
+    ]
+  }
+}
